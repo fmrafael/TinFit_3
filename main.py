@@ -4,9 +4,6 @@ app = Flask(__name__)
 app.secret_key = "teste-key"
 
 
-
-
-
 @app.route('/')
 
 def home():
