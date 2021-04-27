@@ -1,7 +1,10 @@
+import os
 from googleapiclient.discovery import build
-from config import *
 
 
+
+
+API_KEY = os.environ['API_KEY']
 
 
 
