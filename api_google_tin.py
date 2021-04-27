@@ -1,11 +1,11 @@
 from googleapiclient.discovery import build
-import os
-
-my_secret = os.environ['API_KEY']
+from config import *
 
 
 
-youtube = build('youtube','v3',developerKey=my_secret)
+
+
+youtube = build('youtube','v3',developerKey=API_KEY)
 
 response = youtube.search().list(
         q="treino|planilha de treino|treino de corrida",
