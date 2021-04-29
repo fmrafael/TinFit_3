@@ -1,14 +1,14 @@
- {% include "header.html" %}
+{% include "header.html" %}
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('static/img/home-bg.jpg')">
+  <header class="masthead" style="background-image: url('static/img/news-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
             <h1>Futeba.club</h1>
-            <span class="subheading">Os melhores vídeos</span>
+            <span class="subheading">As notícias</span>
           </div>
         </div>
       </div>
@@ -21,18 +21,18 @@
       <div class="col-lg-8 col-md-10 mx-auto" >
       
           <a href="#">
-           {% for title,videoId,imageVideo in title_videoId_imageVideo %}   
+           {% for title_news,desc_news,url_news,urlToImage_news,source_news in news_data %}   
   <div class="post-preview">
-            <a href= "https://www.youtube.com/watch?v={{videoId}}">
+            <a href= "{{url_news}}">
             <h2 class="post-title">
-              {{title.title()}}
+              {{title_news.title()}}
             </h2>
             <h3 class="post-subtitle">
-             <img src="{{imageVideo}}" >
+             <img src="{{urlToImage_news}}" >
             </h3>
             <hr>
           </a>
-          <p class="post-meta"> Futeba.club
+          <p class="post-meta"> Futeba.club  | Fonte: {{source_news}}
             </a>
           </p>
  
@@ -52,4 +52,3 @@
   
 
   {% include "footer.html" %}
-
