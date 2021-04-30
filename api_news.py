@@ -1,5 +1,10 @@
 import os 
 from newsapi import NewsApiClient
+from datetime import date,datetime,timedelta
+
+today = date.today()
+days_delta = timedelta(30)
+thirty_days_ago = today - days_delta
 
 API_KEY_NEWS = os.environ['API_KEY_NEWS']
 
@@ -15,8 +20,8 @@ id = ', '.join(data_source)
  
 all_articles = newsapi.get_everything(q='futebol',
                                       sources = id,
-                                      from_param='2021-04-01',
-                                      to='2021-04-26',
+                                      from_param=thirty_days_ago,
+                                      to=today,
                                       page=2)['articles']
 
 
