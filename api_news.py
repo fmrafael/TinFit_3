@@ -3,7 +3,7 @@ from newsapi import NewsApiClient
 from datetime import date,datetime,timedelta
 
 today = date.today()
-days_delta = timedelta(30)
+days_delta = timedelta(15)
 thirty_days_ago = today - days_delta
 
 API_KEY_NEWS = os.environ['API_KEY_NEWS']
@@ -25,9 +25,15 @@ all_articles = newsapi.get_everything(q='futebol',
                                       page=2)['articles']
 
 
-title_news = [article['title'] for article in all_articles]
+title_news = [article['title'].title() for article in all_articles]
 desc_news = [article['description'] for article in all_articles]
 url_news = [article['url'] for article in all_articles]
 urlToImage_news = [article['urlToImage'] for article in all_articles]
 source_news = [article['source']['name'] for article in all_articles]
 
+
+title_news.reverse()
+desc_news.reverse()
+url_news.reverse()
+urlToImage_news.reverse()
+source_news.reverse()

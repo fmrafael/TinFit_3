@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from api_google_tin import *
 from api_news import *
+from api_stats import *
 app = Flask(__name__)
 
 
@@ -24,6 +25,12 @@ def about():
 
 def contact():
   return render_template("contact.html")
+
+@app.route('/stats')
+
+def stats():
+  return render_template("stats.html", stats_data = zip
+  ( round_date,round_name_home,round_logo_home,round_name_away,round_logo_away))
  
 
 
