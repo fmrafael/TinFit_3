@@ -2,7 +2,7 @@ import os
 from newsapi import NewsApiClient
 from datetime import date,datetime,timedelta
 
-today = date.today()
+today = datetime.utcnow()
 days_delta = timedelta(15)
 thirty_days_ago = today - days_delta
 

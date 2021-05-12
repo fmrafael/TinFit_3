@@ -1,5 +1,10 @@
 import os
 from googleapiclient.discovery import build
+from datetime import datetime
+from api_news import thirty_days_ago
+
+d  = thirty_days_ago.isoformat("T") + "Z" 
+
 
 API_KEY = os.environ['API_KEY']
 
@@ -10,9 +15,9 @@ response = youtube.search().list(
         order="viewCount",
         part="id,snippet",
         maxResults=20,
-        regionCode="BR"
-   
-         
+        regionCode="BR",
+        publishedAfter=d
+        
         ).execute()
 all_videos = response["items"]
 
