@@ -14,7 +14,7 @@ response = youtube.search().list(
         q="futebol",
         order="viewCount",
         part="id,snippet",
-        maxResults=20,
+        maxResults=10,
         regionCode="BR",
         publishedAfter=d
         

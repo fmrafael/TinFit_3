@@ -3,7 +3,7 @@ from newsapi import NewsApiClient
 from datetime import date,datetime,timedelta
 
 today = datetime.utcnow()
-days_delta = timedelta(15)
+days_delta = timedelta(10)
 thirty_days_ago = today - days_delta
 
 API_KEY_NEWS = os.environ['API_KEY_NEWS']

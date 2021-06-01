@@ -7,7 +7,7 @@ API_KEY_STATS = os.environ['API_KEY_STATS']
 
 url = "https://api-football-beta.p.rapidapi.com/fixtures"
 
-querystring = {"league":"71","season":"2021", "next":"10","round":"Regular Season - 1"}
+querystring = {"league":"71","season":"2021", "next":"10","round":"Regular Season - 2"}
 
 headers = {
     'x-rapidapi-key': API_KEY_STATS,
